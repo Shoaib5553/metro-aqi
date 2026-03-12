@@ -3,7 +3,6 @@
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.0%2B-orange)
 ![Flask](https://img.shields.io/badge/Flask-Web%20Framework-lightgrey)
-![Accuracy](https://img.shields.io/badge/Accuracy-96.8%25-brightgreen)
 ![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)
 
 **Metro-AQI** is an automated, hybrid intelligent framework designed for highly accurate Air Quality Index (AQI) category classification. By combining a **1-Dimensional Convolutional Neural Network (1D-CNN)** with a **Bidirectional Long Short-Term Memory (Bi-LSTM)** network, this system effectively captures both the complex spatial interactions of chemical pollutants and their long-term temporal momentum.
@@ -32,25 +31,6 @@ The deep learning pipeline is structured to handle the chaotic, non-linear natur
 3. **Classification Engine:** * **1D-CNN:** Scans the 30-day window to extract immediate chemical dependencies.
    * **Bi-LSTM:** Analyzes the extracted feature maps bidirectionally to understand pollution buildup/dissipation.
    * **Optimization:** Trained using the **Adam Optimizer** and Categorical Crossentropy loss.
-
----
-
-## 📊 Performance & Results
-
-The Metro-AQI framework was rigorously evaluated against classical machine learning (SVM, Linear Regression) and standalone deep learning (CNN, LSTM) baselines. 
-
-At an optimal **80% training data split**, the Hybrid CNN-BiLSTM achieved state-of-the-art classification performance:
-
-| Metric | Score |
-| :--- | :--- |
-| **Accuracy** | 96.80% |
-| **Precision** | 98.00% |
-| **Recall** | 97.00% |
-| **F1-Score** | 97.00% |
-| **Cohen's Kappa** | 0.95 |
-| **Log Loss** | 0.17 |
-
-*Note: The exceptionally low log loss (0.17) and high Kappa score (0.95) confirm that the model's predictions are driven by learned physical pollution drivers rather than statistical randomness.*
 
 ---
 
