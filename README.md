@@ -24,11 +24,12 @@ This project abandons traditional single-architecture reliance to provide citize
 The deep learning pipeline is structured to handle the chaotic, non-linear nature of environmental data:
 
 1. **Data Acquisition:** Historical training via CPCB datasets (`city_day.csv`) and live inference via Open-Meteo API.
-2. **Preprocessing:** * **Imputation:** Localized forward/backward filling to maintain continuous chronological sequences.
+2. **Preprocessing:**
+   * **Imputation:** Localized forward/backward filling to maintain continuous chronological sequences.
    * **Target Discretization:** Raw AQI values are mapped to official CPCB health risk categories and One-Hot Encoded.
    * **Sequence Windowing:** Flat 2D data is transformed into `(samples, time_steps, features)` 3D overlapping arrays using a 30-day sliding window.
    * **Normalization:** Min-Max scaling is applied to balance wild chemical concentration disparities.
-3. **Classification Engine:** * **1D-CNN:** Scans the 30-day window to extract immediate chemical dependencies.
+4. **Classification Engine:** * **1D-CNN:** Scans the 30-day window to extract immediate chemical dependencies.
    * **Bi-LSTM:** Analyzes the extracted feature maps bidirectionally to understand pollution buildup/dissipation.
    * **Optimization:** Trained using the **Adam Optimizer** and Categorical Crossentropy loss.
 
